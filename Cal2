@@ -1,0 +1,190 @@
+import cmath
+
+def addition(a, b):
+    return a + b
+
+def subtraction(a, b):
+    return a - b
+
+def multiplication(a, b):
+    return a * b
+
+def division(a, b):
+    return a / b
+
+def exponentiation(a, b):
+    return a ** b
+
+def square_root(a):
+    return cmath.sqrt(a)
+
+def sine(a):
+    return cmath.sin(a)
+
+def cosine(a):
+    return cmath.cos(a)
+
+def tangent(a):
+    return cmath.tan(a)
+
+def arcsine(a):
+    return cmath.asin(a)
+
+def arccosine(a):
+    return cmath.acos(a)
+
+def arctangent(a):
+    return cmath.atan(a)
+
+def logarithm(a, b):
+    return cmath.log(a, b)
+
+def exponent(a):
+    return cmath.exp(a)
+
+def round_number(a, b=0):
+    return round(a, b)
+
+def convert_fraction_to_decimal(a):
+    return float(a)
+
+def convert_decimal_to_fraction(a):
+    return str(a)
+
+def percentage(a):
+    return a / 100
+
+def percentage_of(a, b):
+    return (a * b) / 100
+
+def complex_addition(a, b):
+    return a + b
+
+def complex_subtraction(a, b):
+    return a - b
+
+def complex_multiplication(a, b):
+    return a * b
+
+def complex_division(a, b):
+    return a / b
+
+print("Калькулятор: ")
+print("1. Сложение")
+print("2. Вычитание")
+print("3. Умножение")
+print("4. Деление")
+print("5. Возведение в степень")
+print("6. Извлечение корня")
+print("7. Синус")
+print("8. Косинус")
+print("9. Тангенс")
+print("10. Арксинус")
+print("11. Арккосинус")
+print("12. Арктангенс")
+print("13. Логарифм")
+print("14. Экспонента")
+print("15. Округление")
+print("16. Преобразование дробей")
+print("17. Работа с процентами")
+print("18. Работа с комплексными числами")
+
+while True:
+    choice = input("Выберите функцию (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18): ")
+
+    if choice in ('1', '2', '3', '4', '5', '15'):
+        num1 = float(input("Введите первое число: "))
+        num2 = float(input("Введите второе число: "))
+
+        if choice == '1':
+            print(num1, "+", num2, "=", addition(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtraction(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiplication(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", division(num1, num2))
+
+        elif choice == '5':
+            print(num1, "**", num2, "=", exponentiation(num, num2))
+
+        elif choice == '15':
+            round_type = input("Выберите тип округления (1 - округление до ближайшего целого числа, 2 - округление до заданного количества десятичных знаков): ")
+
+        if round_type == '1':
+            print(round_number(num1))
+
+        elif round_type == '2':
+            decimal_places = int(input("Введите количество десятичных знаков: "))
+            print(round_number(num1, decimal_places))
+
+elif choice in ('6', '7', '8', '9', '10', '11', '12', '13', '14'):
+    num = float(input("Введите число: "))
+
+    if choice == '6':
+        print("√", num, "=", square_root(num))
+
+    elif choice == '7':
+        print("sin(", num, ")=", sine(num))
+
+    elif choice == '8':
+        print("cos(", num, ")=", cosine(num))
+
+    elif choice == '9':
+        print("tan(", num, ")=", tangent(num))
+
+    elif choice == '10':
+        print("arcsin(", num, ")=", arcsine(num))
+
+    elif choice == '11':
+        print("arccos(", num, ")=", arccosine(num))
+
+    elif choice == '12':
+        print("arctan(", num, ")=", arctangent(num))
+
+    elif choice == '13':
+        base = float(input("Введите основание логарифма: "))
+        print("log", base, "(", num, ")=", logarithm(num, base))
+
+    elif choice == '14':
+        print("exp(", num, ")=", exponent(num))
+
+elif choice == '16':
+    fraction = input("Введите дробь: ")
+
+    decimal_type = input("Выберите тип преобразования (1 - преобразование дроби в десятичную дробь, 2 - преобразование десятичной дроби в дробь): ")
+
+    if decimal_type == '1':
+        print(convert_fraction_to_decimal(fraction))
+
+    elif decimal_type == '2':
+        print(convert_decimal_to_fraction(float(fraction)))
+
+elif choice == '17':
+    num = float(input("Введите число: "))
+
+    percentage_type = input("Выберите тип работы с процентами (1 - получение процента числа, 2 - получение числа из процента, 3 - получение процента от числа): ")
+
+    if percentage_type == '1':
+        print(num, "% =", percentage(num))
+
+    elif percentage_type == '2':
+        print(num, "* 100% =", percentage_of(num, 100))
+
+    elif percentage_type == '3':
+        percentage_of_num = float(input("Введите процент: "))
+        print(percentage_of_num, "% от", num, "=", percentage_of(num, percentage_of_num))
+
+elif choice == '18':
+    complex_num1 = complex(input("Введите первое комплексное число (в формате a+bj): "))
+    complex_num2 = complex(input("Введите второе комплексное число (в формате a+bj): "))
+
+    if choice == '18':
+        print(complex_num1, "+", complex_num2, "=", complex_addition(complex_num1, complex_num2))
+
+    elif choice == '19':
+        print(complex_num1, "-", complex_num2, "=", complex_subtraction(complex_num1, complex_num2))
+
