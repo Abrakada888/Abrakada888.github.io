@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <script src="math.js"></script>
+  </head>
+  <body>
+    <input type="text" id="input">
+    <button onclick="calculate()">Рассчитать</button>
+    <div id="output"></div>
+    
+    <script>
+      function calculate() {
+        let input = document.getElementById("input").value;
+        let output = document.getElementById("output");
+        let result;
+        
+        try {
+          result = eval(input); // вычисление выражения
+          output.innerHTML = result; // вывод результата
+        } catch (e) {
+          output.innerHTML = "Ошибка: " + e.message; // обработка ошибок
+        }
+      }
+    </script>
+  </body>
+</html>
